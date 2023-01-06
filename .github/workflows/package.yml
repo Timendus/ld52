@@ -28,8 +28,6 @@ jobs:
     - name: Build with pyinstaller
       run: |
         pyinstaller test.py
-    - name: Upload asset
-      uses: actions/upload-release-asset@v1
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
