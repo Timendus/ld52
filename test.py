@@ -3,44 +3,72 @@ import pygame
  
 # define a main function
 def main():
-     
-    # initialize the pygame module
-    pygame.init()
-    # load and set the logo
-    # logo = pygame.image.load("logo32x32.png")
-    # pygame.display.set_icon(logo)
-    pygame.display.set_caption("Awesome Dungeons")
-     
-    # create a surface on screen that has the size of 240 x 180
-    screen = pygame.display.set_mode((800, 600))
-    screen.fill("blue")
+    
+  # initialize the pygame module
+  pygame.init()
+  # load and set the logo
+  # logo = pygame.image.load("logo32x32.png")
+  # pygame.display.set_icon(logo)
+  pygame.display.set_caption("Awesome Dungeons")
+    
+  # create a surface on screen that has the size of 240 x 180
+  screen = pygame.display.set_mode((800, 600))
 
+  # define a variable to control the main loop
+  running = True
+
+  # Player state
+  player = [200, 200]
+  keys = [False, False, False, False]
+
+  def renderPlayer():
+    screen.fill("blue")
     pygame.draw.rect(
         screen,
-        (50, 50, 50),
-        [10, 10, 200, 300]
+        (255, 255, 255),
+        [player[0], player[1], 30, 30]
     )
-
     pygame.display.flip()
-     
-    # define a variable to control the main loop
-    running = True
-     
-    # main loop
-    while running:
-        # event handling, gets all event from the event queue
-        for event in pygame.event.get():
-            # only do something if the event is of type QUIT
-            if event.type == pygame.QUIT:
-                # change the value to False, to exit the main loop
-                running = False
-            if event.type == pygame.KEYDOWN:
-                if event.key in [pygame.K_a, pygame.K_LEFT]:
-                    print("Waaaw")
-     
-     
+
+  renderPlayer()
+
+  # main loop
+  while running:
+
+    # event handling, gets all event from the event queue
+    for event in pygame.event.get():
+      # only do something if the event is of type QUIT
+      if event.type == pygame.QUIT:
+        # change the value to False, to exit the main loop
+        running = False
+      if event.type == pygame.KEYDOWN:
+        if event.key in [pygame.K_a, pygame.K_LEFT]:
+          keys[0] = True
+        if event.key in [pygame.K_d, pygame.K_RIGHT]:
+          keys[1] = True
+        if event.key in [pygame.K_w, pygame.K_UP]:
+          keys[2] = True
+        if event.key in [pygame.K_s, pygame.K_DOWN]:
+          keys[3] = True
+      if event.type == pygame.KEYUP:
+        if event.key in [pygame.K_a, pygame.K_LEFT]:
+          keys[0] = False
+        if event.key in [pygame.K_d, pygame.K_RIGHT]:
+          keys[1] = False
+        if event.key in [pygame.K_w, pygame.K_UP]:
+          keys[2] = False
+        if event.key in [pygame.K_s, pygame.K_DOWN]:
+          keys[3] = False
+
+    # Update player position based on keys pressed
+    player[0] +=  -1 if keys[0] else 0
+    player[0] +=   1 if keys[1] else 0
+    player[1] +=  -1 if keys[2] else 0
+    player[1] +=   1 if keys[3] else 0
+    renderPlayer()
+
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)
 if __name__=="__main__":
-    # call the main function
-    main()
+  # call the main function
+  main()
