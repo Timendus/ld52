@@ -22,15 +22,25 @@ def main():
   keys = [False, False, False, False]
 
   def renderPlayer():
-    screen.fill("blue")
+    # Update only player position
+    pygame.draw.rect(
+        screen,
+        "blue",
+        [player[0]-1, player[1]-1, 32, 32]
+    )
     pygame.draw.rect(
         screen,
         (255, 255, 255),
         [player[0], player[1], 30, 30]
     )
-    pygame.display.flip()
+    # Partial screen updates (provide one or more Rect's)
+    pygame.display.update([player[0]-1, player[1]-1, 32, 32])
 
+  # Initial screen draw
+  screen.fill("blue")
   renderPlayer()
+  # Full screen update
+  pygame.display.flip()
 
   # main loop
   while running:
