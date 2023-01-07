@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://PathFollow.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/straight.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 [ext_resource path="res://assets/images/right.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/left.png" type="Texture" id=6]
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
 
@@ -32,6 +33,11 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1, 8, 1 )
+
 [sub_resource type="QuadMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -55,7 +61,7 @@ curve = SubResource( 11 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Track level 1/Path"]
 use_collision = true
-polygon = PoolVector2Array( -5, 0, -5, 1, 5, 1, 5, 0 )
+polygon = PoolVector2Array( -5, 0, -5, 0, 5, 0, 5, 0 )
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -66,6 +72,7 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = true
+material = SubResource( 12 )
 
 [node name="PathFollow" type="PathFollow" parent="Track level 1/Path"]
 transform = Transform( 0.407273, 1.12876e-05, 0.913307, -4.02405e-05, 1, 5.58546e-06, -0.913307, -3.90268e-05, 0.407273, -63.8448, 0.996417, -43.1412 )
