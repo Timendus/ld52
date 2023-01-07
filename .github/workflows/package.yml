@@ -4,7 +4,7 @@ on: push
 env:
   GODOT_VERSION: 3.5.1
   EXPORT_NAME: harvest
-  PROJECT_PATH: ld52
+  PROJECT_PATH: .
   
 jobs:
   export-windows:
