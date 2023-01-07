@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/images/track1.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/straight.png" type="Texture" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 2 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.8673 )
+current = true
+fov = 33.9576
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 3.32791, 0, 0, 0, 1, 0, 0, 0, 3.10087, 0, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="Player" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.74842, 0, 0, 0, 1, -0.000984669, 0.386633, -0.00180268 )
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
