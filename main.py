@@ -1,6 +1,7 @@
 # import the pygame module, so you can use it
 import pygame
 from player import Player
+from score import Score
 
 # define a main function
 def main():
@@ -22,6 +23,7 @@ def main():
   running = True
 
   clock = pygame.time.Clock()
+  score = Score()
 
   # main loop
   while running:
@@ -67,6 +69,12 @@ def main():
       screen.blit(pygame.transform.scale(display, (screen.get_width(), int(screen.get_width() / aspect_ratio))), (0, 0))
     else:
       screen.blit(pygame.transform.scale(display, (int(screen.get_height() * aspect_ratio), screen.get_height())), (0, 0))
+    pygame.display.flip()
+
+    # Score
+    if keys[pygame.K_p]: # You will score when pressing P
+        score.add_to_score(1)
+    score.show_score(screen)
     pygame.display.flip()
 
 # run the main function only if this module is executed as the main script
