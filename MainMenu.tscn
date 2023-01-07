@@ -166,7 +166,8 @@ position = Vector2( 900, 509 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 6 )
 animation = "weave"
-frame = 3
+frame = 5
 playing = true
 
 [connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="MainMenu" method="_on_New_Game_Button_button_up"]
+[connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Credits Button" to="MainMenu" method="_on_Credits_Button_button_up"]

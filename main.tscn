@@ -69,7 +69,6 @@ environment = SubResource( 10 )
 curve = SubResource( 11 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Track level 1/Path"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 use_collision = true
 polygon = PoolVector2Array( -5, 0, -5, 1, 5, 1, 5, 0 )
 mode = 2
