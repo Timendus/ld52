@@ -11,21 +11,15 @@ def main():
   # logo = pygame.image.load("logo32x32.png")
   # pygame.display.set_icon(logo)
   pygame.display.set_caption("Awesome Dungeons")
-    
+  
   # create a surface on screen that has the size of 240 x 180
-  screen = pygame.display.set_mode((800, 600))
+  screen = pygame.display.set_mode((800, 600), pygame.RESIZABLE + pygame.SCALED)
+  display = pygame.Surface((300, 200))
+
+  aspect_ratio = 4 / 3
 
   # define a variable to control the main loop
   running = True
-
-  # Player state
-  player = Player()
-
-  # Initial screen draw
-  screen.fill("blue")
-  player.render(screen)
-  # Full screen update
-  pygame.display.flip()
 
   clock = pygame.time.Clock()
 
@@ -42,14 +36,38 @@ def main():
 
     # Update player position based on keys pressed
     keys = pygame.key.get_pressed()
-    player.userInput(
-      keys[pygame.K_UP] or keys[pygame.K_w],
-      keys[pygame.K_DOWN] or keys[pygame.K_s],
-      keys[pygame.K_LEFT] or keys[pygame.K_a],
-      keys[pygame.K_RIGHT] or keys[pygame.K_d]
+
+    width = display.get_width()
+    height = display.get_height()
+
+    pygame.draw.rect(
+        display,
+        "blue",
+        [0, 0, width, height / 2]
     )
-    player.updatePos()
-    player.render(screen)
+
+    rows = int(height / 2)
+    for i in range(0, rows):
+      y = height / 2 + i
+      perspective = i / rows
+      pygame.draw.rect(
+          display,
+          "green",
+          [0, y, width, y]
+      )
+      road_width = width * (0.1 + perspective * 0.8)
+      side_width = (width - road_width) / 2
+      pygame.draw.rect(
+          display,
+          "gray",
+          [side_width, y, road_width, y]
+      )
+
+    if screen.get_height() > screen.get_width() / aspect_ratio:
+      screen.blit(pygame.transform.scale(display, (screen.get_width(), int(screen.get_width() / aspect_ratio))), (0, 0))
+    else:
+      screen.blit(pygame.transform.scale(display, (int(screen.get_height() * aspect_ratio), screen.get_height())), (0, 0))
+    pygame.display.flip()
 
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)
