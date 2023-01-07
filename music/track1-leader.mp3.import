@@ -11,5 +11,5 @@ dest_files=[ "res://.import/track1-leader.mp3-8d612a5a735e0e99225f1e20a8121b71.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
