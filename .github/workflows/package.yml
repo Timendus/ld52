@@ -2,9 +2,8 @@ name: Python executable
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - '*.*.*'
 
 jobs:
   build:
@@ -30,7 +29,6 @@ jobs:
         pyinstaller main.py --onefile
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: dist/*
     
