@@ -54,10 +54,10 @@ script = ExtResource( 3 )
 mainGameScene = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
-margin_left = -1059.0
-margin_top = -153.0
-margin_right = 3941.0
-margin_bottom = 847.0
+margin_left = -1090.0
+margin_top = -973.0
+margin_right = 3910.0
+margin_bottom = 1527.0
 size_flags_horizontal = 4
 size_flags_vertical = 5
 texture = ExtResource( 5 )
@@ -166,7 +166,7 @@ position = Vector2( 900, 509 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 6 )
 animation = "weave"
-frame = 2
+frame = 4
 playing = true
 
 [connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="MainMenu" method="_on_New_Game_Button_button_up"]
