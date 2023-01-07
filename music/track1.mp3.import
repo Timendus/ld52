@@ -11,5 +11,5 @@ dest_files=[ "res://.import/track1.mp3-35277a7709c9a50f21bcc464e8a25a42.mp3str" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
