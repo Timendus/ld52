@@ -1,9 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://plasmatica.open.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://main.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/sky.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/grain_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/grain_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/grain.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/grain_3.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -34,18 +39,29 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "weave",
+"speed": 5.0
+} ]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="Node2D" parent="."]
 script = ExtResource( 3 )
 mainGameScene = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.278431, 0.32549, 0.47451, 1 )
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+margin_left = -1059.0
+margin_top = -153.0
+margin_right = 3941.0
+margin_bottom = 847.0
+size_flags_horizontal = 4
+size_flags_vertical = 5
+texture = ExtResource( 5 )
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 margin_right = 1024.0
@@ -144,5 +160,13 @@ custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
 text = "Credits"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MainMenu"]
+position = Vector2( 900, 509 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 6 )
+animation = "weave"
+frame = 3
+playing = true
 
 [connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="MainMenu" method="_on_New_Game_Button_button_up"]
