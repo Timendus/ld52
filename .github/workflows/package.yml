@@ -27,10 +27,12 @@ jobs:
         pip install pyinstaller
     - name: Build with pyinstaller
       run: |
-        pyinstaller main.py
-    - uses: actions/upload-artifact@v3
+        pyinstaller main.py --onefile
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        path: dist/
+        files: dist/*
     
 
 
