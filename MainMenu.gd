@@ -7,8 +7,8 @@ func _ready():
 
 func _on_New_Game_Button_button_up():
 	get_tree().change_scene(mainGameScene.resource_path)
-	#MusicController.play_track1()
-	MusicController.play_track2()
+	MusicController.play_track1()
+	#MusicController.play_track2()
 
 func _on_Credits_Button_button_up():
 	get_tree().change_scene("res://Credits.tscn")
