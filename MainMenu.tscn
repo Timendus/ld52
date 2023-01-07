@@ -126,7 +126,7 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="High Score Button" type="Button" parent="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="High Scores Button" type="Button" parent="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 61.0
@@ -137,7 +137,7 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
-text = "High Score"
+text = "High Scores"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MainMenu/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 162.0
@@ -166,8 +166,9 @@ position = Vector2( 900, 509 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 6 )
 animation = "weave"
-frame = 1
+frame = 5
 playing = true
 
 [connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="MainMenu" method="_on_New_Game_Button_button_up"]
+[connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/High Scores Button" to="MainMenu" method="_on_High_Scores_Button_button_up"]
 [connection signal="button_up" from="MainMenu/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Credits Button" to="MainMenu" method="_on_Credits_Button_button_up"]
