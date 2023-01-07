@@ -93,20 +93,20 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
+[node name="Place1Text" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "Anne-Greeth"
-autowrap = true
+text = "Placeholder"
+clip_text = true
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
+[node name="Place1Score" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "3000"
+text = "1000"
 align = 2
 autowrap = true
 
@@ -119,20 +119,20 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Place2Text" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "Bob"
-autowrap = true
+text = "Placeholder"
+clip_text = true
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Place2Score" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "2500	"
+text = "1000"
 align = 2
 autowrap = true
 
@@ -145,20 +145,20 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+[node name="Place3Text" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "Miranda"
-autowrap = true
+text = "Placeholder"
+clip_text = true
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+[node name="Place3Score" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "2000"
+text = "1000"
 align = 2
 autowrap = true
 
@@ -171,20 +171,20 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer6"]
+[node name="Place4Text" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer6"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "Tim"
-autowrap = true
+text = "Placeholder"
+clip_text = true
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer6"]
+[node name="Place4Score" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer6"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "1500"
+text = "1000"
 align = 2
 autowrap = true
 
@@ -197,15 +197,15 @@ size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer7"]
+[node name="Place5Text" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer7"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
 custom_fonts/font = SubResource( 2 )
-text = "Nick"
-autowrap = true
+text = "Placeholder"
+clip_text = true
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer7"]
+[node name="Place5Score" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer7"]
 margin_left = 50.0
 margin_right = 574.0
 margin_bottom = 35.0
