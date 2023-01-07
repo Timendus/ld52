@@ -35,11 +35,6 @@ albedo_texture = ExtResource( 4 )
 
 [node name="Spatial" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.1954, 0.290188, 0 )
-current = true
-fov = 41.6181
-
 [node name="Player" type="RigidBody" parent="."]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -56,6 +51,11 @@ material/0 = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.351932, 0 )
 shape = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( -4.31475e-08, 0.160105, -0.9871, 6.99842e-09, 0.9871, 0.160105, 1, 4.44089e-16, -4.37114e-08, -1.42033, 0.497475, 0 )
+current = true
+fov = 41.6181
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
