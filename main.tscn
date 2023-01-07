@@ -35,6 +35,7 @@ _data = {
 
 [sub_resource type="SpatialMaterial" id=12]
 flags_transparent = true
+flags_unshaded = true
 albedo_texture = ExtResource( 5 )
 uv1_scale = Vector3( 1, 8, 1 )
 
