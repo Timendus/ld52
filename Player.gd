@@ -24,7 +24,16 @@ func _process(delta):
 	var drift = right.dot(previousDirection) - up.dot(previousDirection) if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor
 	var x = Vector3.FORWARD.dot(translation)
+	
 	x += delta * slide
+	
+	if abs(x) > 2.5:
+		# Drifted from road.
+		# Keep player on road.
+		x = sign(x) * 2.5
+		# Decrease speed significantly
+		get_parent().speed *= 0.5
+
 	translation = Vector3.FORWARD * x
 	
 	previousDirection = forward
