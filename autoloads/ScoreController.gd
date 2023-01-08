@@ -4,11 +4,11 @@
 extends Node
 
 var scores = [
-	[ "Anne-Greeth", 	3000 ],
-	[ "Bob", 			2500 ],
-	[ "Miranda", 		2000 ],
-	[ "Tim", 			1500 ],
-	[ "Nick", 			1000 ]
+	[ "Anne-Greeth", 	100 ],
+	[ "Bob", 			75 ],
+	[ "Miranda", 		50 ],
+	[ "Tim", 			25 ],
+	[ "Nick", 			10 ]
 ]
 
 var current_score = 0
@@ -33,6 +33,7 @@ func register_highscore(name):
 	for i in range(scores.size()-1):
 		if current_score > scores[i][1]:
 			scores.insert(i, [name,current_score])
+			break
 
 func get_scores():
 	return scores

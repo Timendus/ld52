@@ -14,7 +14,6 @@ params_alpha_scissor_threshold = 0.98
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.5984, 0.466335, 0.212517 )
 
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0.0608108 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -82,4 +81,7 @@ process_material = SubResource( 8 )
 draw_pass_1 = SubResource( 10 )
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+[connection signal="died" from="." to="." method="_on_Player_died"]
+[connection signal="finished_level" from="." to="." method="_on_Player_finished_level"]
 [connection signal="score" from="." to="." method="_on_Player_score"]
+[connection signal="wrong" from="." to="." method="_on_Player_wrong"]
