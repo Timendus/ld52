@@ -4,11 +4,11 @@
 extends Node
 
 var scores = [
-	[ "Anne-Greeth", 	3000 ],
-	[ "Bob", 			2500 ],
-	[ "Miranda", 		2000 ],
-	[ "Tim", 			1500 ],
-	[ "Nick", 			1000 ]
+	[ "Anne-Greeth", 	100 ],
+	[ "Bob", 			75 ],
+	[ "Miranda", 		50 ],
+	[ "Tim", 			25 ],
+	[ "Nick", 			10 ]
 ]
 
 var current_score = 0
