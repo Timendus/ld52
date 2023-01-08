@@ -12,9 +12,11 @@ var chicken_sfx = load("res://assets/soundeffects/chicken.mp3")
 var crash_sfx = load("res://assets/soundeffects/crash.mp3")
 var level_sfx = load("res://assets/soundeffects/level.mp3")
 var pickup_sfx = load("res://assets/soundeffects/pickup.mp3")
+var engine_sfx = load("res://assets/soundeffects/engine.mp3")
 
 # Internal state and consts
 var playing
+var engine_audio
 
 const NOTHING = -1
 const MENU = 0
@@ -28,11 +30,18 @@ const LEVEL = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	menu_music.loop   = true
 	track1_leader_music.loop = false
 	track2_leader_music.loop = false
-	menu_music.loop   = true
 	track1_music.loop = true
 	track2_music.loop = true
+
+	chicken_sfx.loop = false
+	crash_sfx.loop = false
+	level_sfx.loop = false
+	pickup_sfx.loop = false
+	engine_sfx.loop = true
+
 	playing = NOTHING
 
 # Music stuff
@@ -80,3 +89,12 @@ func playSFX(fx):
 
 func _remove_Player(effect):
 	remove_child(effect)
+
+func engine_start():
+	engine_audio = AudioStreamPlayer.new()
+	engine_audio.stream = engine_sfx
+	add_child(engine_audio)
+	engine_audio.play()
+
+func engine_stop():
+	engine_audio.stop()
