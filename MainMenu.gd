@@ -6,7 +6,7 @@ func _ready():
 	$AnimatedSprite.play()
 
 func _on_New_Game_Button_button_up():
-	get_tree().change_scene(mainGameScene.resource_path)
+	LevelController.loadCurrentLevel()
 	MusicController.play_track1()
 	#MusicController.play_track2()
 

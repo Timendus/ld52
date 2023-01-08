@@ -61,5 +61,4 @@ func _on_Player_wrong():
 	ScoreController.add_to_current_score(-10)
 	
 func _on_Player_finished_level():
-	#TODO: Make sure this goes to the next level
-	print("finished the level")
+	LevelController.nextLevel()
