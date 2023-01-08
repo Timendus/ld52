@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/corn.png-13a0c6b6255c8c6bc234f70791ee6862.s3tc.stex"
-path.etc2="res://.import/corn.png-13a0c6b6255c8c6bc234f70791ee6862.etc2.stex"
+path.s3tc="res://.import/chicken.png-9eb0dd177af50e8c4f041accb12d71e4.s3tc.stex"
+path.etc2="res://.import/chicken.png-9eb0dd177af50e8c4f041accb12d71e4.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/corn.png"
-dest_files=[ "res://.import/corn.png-13a0c6b6255c8c6bc234f70791ee6862.s3tc.stex", "res://.import/corn.png-13a0c6b6255c8c6bc234f70791ee6862.etc2.stex" ]
+source_file="res://assets/images/chicken.png"
+dest_files=[ "res://.import/chicken.png-9eb0dd177af50e8c4f041accb12d71e4.s3tc.stex", "res://.import/chicken.png-9eb0dd177af50e8c4f041accb12d71e4.etc2.stex" ]
 
 [params]
 

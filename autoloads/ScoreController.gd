@@ -20,7 +20,7 @@ func reset_current_score():
 	current_score = 0
 
 func add_to_current_score(value):
-	current_score += 1
+	current_score += value
 	# Send signal to listeners that score has changed
 	emit_signal("score_changed", current_score)
 	
