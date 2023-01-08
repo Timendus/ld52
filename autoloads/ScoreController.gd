@@ -13,21 +13,26 @@ var scores = [
 
 var current_score = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
+signal score_changed(new_score)
+
+# Reset score to 0 when new game is started
 func reset_current_score():
-	pass
+	current_score = 0
 
 func add_to_current_score(value):
-	pass
+	current_score += 1
+	# Send signal to listeners that score has changed
+	emit_signal("score_changed", current_score)
 	
+# Check if score at end of game is higher than lowest high score saved in scores list
 func is_highscore():
-	pass
+	return current_score > scores[4][1]
 	
+# Save high score in scores list
 func register_highscore(name):
-	pass
+	for i in range(scores.size()-1):
+		if current_score > scores[i][1]:
+			scores.insert(i, [name,current_score])
 
 func get_scores():
 	return scores
