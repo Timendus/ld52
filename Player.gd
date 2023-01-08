@@ -21,6 +21,9 @@ func _process(delta):
 	var up = get_parent().transform.basis.y
 	var right = get_parent().transform.basis.z
 	
+	$LeftParticles.emitting = Input.is_action_pressed("left")
+	$RightParticles.emitting = Input.is_action_pressed("right")
+	
 	var steering = (1 if Input.is_action_pressed("right") else 0) - (1 if Input.is_action_pressed("left") else 0)
 	var drift = right.dot(previousDirection) - up.dot(previousDirection) if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor
