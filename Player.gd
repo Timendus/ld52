@@ -40,4 +40,4 @@ func _on_Player_body_entered(body):
 	body.emit_signal("pickedup", self)
 
 func _on_Player_score(score):
-	print("Scored ", score)
+	ScoreController.add_to_current_score(score)
