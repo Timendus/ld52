@@ -33,6 +33,7 @@ func register_highscore(name):
 	for i in range(scores.size()-1):
 		if current_score > scores[i][1]:
 			scores.insert(i, [name,current_score])
+			break
 
 func get_scores():
 	return scores

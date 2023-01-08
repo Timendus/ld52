@@ -68,3 +68,10 @@ func _on_Player_finished_level():
 	MusicController.engine_stop()
 	MusicController.playSFX(MusicController.LEVEL)
 	LevelController.nextLevel()
+
+func _on_Player_dead():
+	MusicController.engine_stop()
+	if ScoreController.is_highscore():
+		get_tree().change_scene("res://NewHighScore.tscn")
+	else:
+		get_tree().change_scene("res://GameOver.tscn")
