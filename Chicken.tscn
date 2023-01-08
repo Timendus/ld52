@@ -8,6 +8,7 @@
 flags_transparent = true
 flags_unshaded = true
 params_cull_mode = 2
+params_billboard_mode = 2
 albedo_texture = ExtResource( 1 )
 
 [node name="Chicken" instance=ExtResource( 2 )]
