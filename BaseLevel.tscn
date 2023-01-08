@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://PathFollow.gd" type="Script" id=1]
 [ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=4]
 [ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
+[ext_resource path="res://BaseLevel.gd" type="Script" id=6]
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
+[ext_resource path="res://Finish.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PanoramaSky" id=9]
 panorama = ExtResource( 7 )
@@ -44,6 +46,8 @@ font_data = ExtResource( 2 )
 
 [node name="Root" type="WorldEnvironment"]
 environment = SubResource( 10 )
+script = ExtResource( 6 )
+finishScene = ExtResource( 8 )
 
 [node name="Path" type="Path" parent="."]
 curve = SubResource( 13 )
