@@ -1,0 +1,167 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://PathFollow.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/straight.png" type="Texture" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/right.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/left.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/grain.png" type="Texture" id=8]
+[ext_resource path="res://ScorePickup.gd" type="Script" id=9]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=10]
+[ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://LapLabel.gd" type="Script" id=12]
+
+[sub_resource type="PanoramaSky" id=9]
+panorama = ExtResource( 7 )
+
+[sub_resource type="Environment" id=10]
+background_mode = 2
+background_sky = SubResource( 9 )
+ambient_light_color = Color( 1, 0.945098, 0.988235, 1 )
+ambient_light_sky_contribution = 0.0
+fog_depth_begin = 0.0
+fog_depth_end = 18.9
+dof_blur_far_distance = 53.97
+dof_blur_far_transition = 3.39
+dof_blur_far_amount = 0.07
+dof_blur_far_quality = 0
+glow_enabled = true
+glow_intensity = 3.69
+glow_bloom = 0.36
+glow_high_quality = true
+
+[sub_resource type="Curve3D" id=11]
+_data = {
+"points": PoolVector3Array( 11.2301, 0, -21.5497, -11.2301, 0, 21.5497, -63.8448, -0.00358265, -43.1412, -7.28441, 0, -17.9075, 7.28441, 0, 17.9075, -57.3648, 0, 46.2864, 0, 0, 0, 0, 0, 0, -38.2836, 0, 63.5731, 2.23553, 0, 17.6049, -2.23553, 0, -17.6049, -25.7087, 0, 46.2477, -4.50632, 0, 12.9928, 4.50632, 0, -12.9928, -31.2623, 0, 22.9156, -11.1631, 0, -2.46855, 11.1631, 0, 2.46855, 3.33871, 0, 13.5065, -17.6659, 0, -0.39468, 17.6659, 0, 0.39468, 32.4764, 0, 57.8201, -3.66373, 0, 7.56299, 3.66373, 0, -7.56299, 56.7578, 0, 24.4332, 3.69379, 0, 9.39615, -3.69379, 0, -9.39615, 66.1668, 0, -26.8613, 14.3306, 0, -4.06609, -14.3306, 0, 4.06609, 41.2784, 0, -43.8583, 7.89145, 0, -3.33869, -7.89145, 0, 3.33869, 18.5146, 0, -18.0593, 6.6774, 0, 6.07035, -6.6774, 0, -6.07035, -9.56447, 0, -22.9489, 10.0161, 0, 3.94573, -10.0161, 0, -3.94573, -35.8151, 0, -53.2673, 11.2301, 0, -21.5497, -11.2301, 0, 21.5497, -63.7387, 0, -43.2513 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1, 8, 1 )
+
+[sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 0.179654
+height = 0.340516
+
+[sub_resource type="CapsuleShape" id=13]
+
+[sub_resource type="QuadMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 75
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 75
+font_data = ExtResource( 11 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 10 )
+
+[node name="Track level 1" type="Spatial" parent="."]
+
+[node name="Path" type="Path" parent="Track level 1"]
+curve = SubResource( 11 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Track level 1/Path"]
+use_collision = true
+polygon = PoolVector2Array( -5, 0, -5, 0, 5, 0, 5, 0 )
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource( 12 )
+
+[node name="PathFollow" type="PathFollow" parent="Track level 1/Path"]
+transform = Transform( 0.407273, 1.12876e-05, 0.913307, -4.02405e-05, 1, 5.58546e-06, -0.913307, -3.90268e-05, 0.407273, -63.8448, 0.996417, -43.1412 )
+v_offset = 1.0
+script = ExtResource( 1 )
+
+[node name="Player" type="RigidBody" parent="Track level 1/Path/PathFollow"]
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+linear_damp = 10.0
+angular_damp = 10.0
+script = ExtResource( 3 )
+forwardTexture = ExtResource( 2 )
+slideRightTexture = ExtResource( 4 )
+slideLeftTexture = ExtResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Track level 1/Path/PathFollow/Player"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.74842, 0, -1, 0, -4.37114e-08, 0, 0.195406, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Track level 1/Path/PathFollow/Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.351932, 0 )
+shape = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="Track level 1/Path/PathFollow"]
+transform = Transform( -1.49012e-07, -2.54659e-11, 1, -3.63798e-12, 1, -6.18456e-11, -1, 5.45697e-11, -1.49012e-07, 1.60001, 1.08846, 0 )
+current = true
+size = 5.0
+
+[node name="Grain" type="StaticBody" parent="."]
+transform = Transform( 0.965853, -0.000950592, -0.259089, 0.00101229, 0.999999, 0.00010472, 0.259088, -0.000363416, 0.965854, -67.2224, 0.5, -34.657 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Grain"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Grain"]
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
+
+[node name="UserInterface" type="Node2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 16 )
+text = "Score: 0"
+script = ExtResource( 10 )
+
+[node name="LapLabel" type="Label" parent="UserInterface"]
+margin_left = 500.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 17 )
+text = "Lap: 1"
+align = 2
+script = ExtResource( 12 )
+
+[connection signal="body_entered" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_body_entered"]
+[connection signal="score" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_score"]
+[connection signal="pickedup" from="Grain" to="Grain" method="_on_pickedup"]
