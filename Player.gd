@@ -13,8 +13,7 @@ export var slideLeftTexture: Texture
 var previousDirection = null
 
 func _ready():
-	pass # Replace with function body.
-
+	MusicController.engine_start()
 
 func _process(delta):
 	var forward = get_parent().transform.basis.x
@@ -66,4 +65,6 @@ func _on_Player_wrong():
 	MusicController.playSFX(MusicController.CHICKEN)
 	
 func _on_Player_finished_level():
+	MusicController.engine_stop()
+	MusicController.playSFX(MusicController.LEVEL)
 	LevelController.nextLevel()
