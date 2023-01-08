@@ -115,10 +115,6 @@ margin_top = 148.0
 margin_right = 562.0
 margin_bottom = 453.0
 custom_fonts/font = SubResource( 16 )
-text = "3"
 align = 1
 valign = 1
 script = ExtResource( 10 )
-
-[connection signal="finished_level" from="Path/PathFollow/Player" to="Path/PathFollow/Player" method="_on_Player_finished_level"]
-[connection signal="wrong" from="Path/PathFollow/Player" to="Path/PathFollow/Player" method="_on_Player_wrong"]

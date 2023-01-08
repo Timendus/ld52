@@ -13,6 +13,7 @@ var crash_sfx = load("res://assets/soundeffects/crash.mp3")
 var level_sfx = load("res://assets/soundeffects/level.mp3")
 var pickup_sfx = load("res://assets/soundeffects/pickup.mp3")
 var engine_sfx = load("res://assets/soundeffects/engine.mp3")
+var countdown_sfx = load("res://assets/soundeffects/countdown.mp3")
 
 # Internal state and consts
 var playing
@@ -27,6 +28,7 @@ const CHICKEN = 1
 const CRASH = 2
 const PICKUP = 3
 const LEVEL = 4
+const COUNTDOWN = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +43,7 @@ func _ready():
 	level_sfx.loop = false
 	pickup_sfx.loop = false
 	engine_sfx.loop = true
+	countdown_sfx.loop = false
 
 	playing = NOTHING
 
@@ -79,10 +82,11 @@ func _on_Music_finished():
 func playSFX(fx):
 	var effect = AudioStreamPlayer.new()
 	match fx:
-		CHICKEN: effect.stream = chicken_sfx
-		CRASH:   effect.stream = crash_sfx
-		PICKUP:  effect.stream = pickup_sfx
-		LEVEL:   effect.stream = level_sfx
+		CHICKEN:   effect.stream = chicken_sfx
+		CRASH:     effect.stream = crash_sfx
+		PICKUP:    effect.stream = pickup_sfx
+		LEVEL:     effect.stream = level_sfx
+		COUNTDOWN: effect.stream = countdown_sfx
 	add_child(effect)
 	effect.play()
 	effect.connect("finished", self, "_remove_Player", [effect])
