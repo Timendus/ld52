@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/images/straight.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://PathFollow.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/right.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/left.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
+
+[sub_resource type="PanoramaSky" id=9]
+panorama = ExtResource( 7 )
+
+[sub_resource type="Environment" id=10]
+background_mode = 2
+background_sky = SubResource( 9 )
+ambient_light_color = Color( 1, 0.945098, 0.988235, 1 )
+ambient_light_sky_contribution = 0.0
+fog_depth_begin = 0.0
+fog_depth_end = 18.9
+dof_blur_far_distance = 53.97
+dof_blur_far_transition = 3.39
+dof_blur_far_amount = 0.07
+dof_blur_far_quality = 0
+glow_enabled = true
+glow_intensity = 3.69
+glow_bloom = 0.36
+glow_high_quality = true
+
+[sub_resource type="Curve3D" id=11]
+_data = {
+"points": PoolVector3Array( 3.22322, 0.472247, -28.9096, -3.22322, -0.472247, 28.9096, -63.8448, -0.00358265, -43.1412, -43.8929, -6.10352e-05, -10.3957, 43.8929, 6.10352e-05, 10.3957, -41.5583, -16.8122, 35.6314, -53.0776, -12.9284, -18.9645, 53.0776, 12.9284, 18.9645, -77.7972, 0, 122.346, -7.4677, -1.52588e-05, 23.0856, 7.4677, 1.52588e-05, -23.0856, -1.59741, -3.64426, 86.6793, -0.0303802, 0, 37.1995, 0.0303802, 0, -37.1995, 67.5291, 0, 46.791, 8.47049, 0, 39.6573, -8.47049, 0, -39.6573, 188.851, 19.888, -47.6464, 16.5561, 0, -1.5401, -16.5561, 0, 1.5401, 69.6895, -0.00146484, -12.5133, 1.01155, -0.0038147, 20.5817, -1.01155, 0.0038147, -20.5817, 15.2782, 2.27209, -43.3446, -31.1866, 1.52588e-05, 10.3956, 31.1866, -1.52588e-05, -10.3956, 62.7583, 0.00143433, -76.4265, -28.1066, 0, 21.1762, 28.1066, 0, -21.1762, 109.214, -10.0274, -51.4005, 38.2834, -4.57764e-05, -9.80446, -38.2834, 4.57764e-05, 9.80446, 34.2174, 3.80913, -124.118, 24.6229, 0, -66.1292, -24.6229, 0, 66.1292, -63.7387, 0, -43.2513 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1, 8, 1 )
+
+[sub_resource type="QuadMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CapsuleShape" id=15]
+radius = 0.179654
+height = 0.340516
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 10 )
+
+[node name="Track level 3" type="Spatial" parent="."]
+
+[node name="Path" type="Path" parent="Track level 3"]
+curve = SubResource( 11 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Track level 3/Path"]
+use_collision = true
+polygon = PoolVector2Array( -5, 0, -5, 0, 5, 0, 5, 0 )
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource( 12 )
+
+[node name="PathFollow" type="PathFollow" parent="Track level 3/Path"]
+transform = Transform( 0.407273, 1.12876e-05, 0.913307, -4.02405e-05, 1, 5.58546e-06, -0.913307, -3.90268e-05, 0.407273, -63.8448, 0.996417, -43.1412 )
+v_offset = 1.0
+script = ExtResource( 3 )
+
+[node name="Player" type="RigidBody" parent="Track level 3/Path/PathFollow"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+linear_damp = 10.0
+angular_damp = 10.0
+script = ExtResource( 2 )
+forwardTexture = ExtResource( 1 )
+slideRightTexture = ExtResource( 4 )
+slideLeftTexture = ExtResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Track level 3/Path/PathFollow/Player"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.74842, 0, -1, 0, -4.37114e-08, 0, 0.195406, 0 )
+mesh = SubResource( 13 )
+skeleton = NodePath("")
+material/0 = SubResource( 14 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Track level 3/Path/PathFollow/Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.351932, 0 )
+shape = SubResource( 15 )
+
+[node name="Camera" type="Camera" parent="Track level 3/Path/PathFollow"]
+transform = Transform( -1.49012e-07, -2.54659e-11, 1, -3.63798e-12, 1, -6.18456e-11, -1, 5.45697e-11, -1.49012e-07, 1.60001, 1.08846, 0 )
+current = true
+size = 5.0
