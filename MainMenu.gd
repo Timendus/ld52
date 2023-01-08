@@ -4,6 +4,7 @@ export var mainGameScene : PackedScene
 
 func _ready():
 	$AnimatedSprite.play()
+	MusicController.play_menu()
 
 func _on_New_Game_Button_button_up():
 	LevelController.loadCurrentLevel()
