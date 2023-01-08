@@ -1,6 +1,9 @@
 extends PathFollow
 
-export var forwardSpeed = 30
+export var maxSpeed = 30
+export var acceleration = 5
+export var speed = 0
 
 func _process(delta):
-	offset += delta * forwardSpeed
+	speed = min(speed + acceleration * delta, maxSpeed)
+	offset += speed * delta
