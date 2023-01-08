@@ -71,6 +71,7 @@ func _on_Player_finished_level():
 
 func _on_Player_died():
 	MusicController.engine_stop()
+	MusicController.playSFX(MusicController.CRASH)
 	if ScoreController.is_highscore():
 		get_tree().change_scene("res://NewHighScore.tscn")
 	else:

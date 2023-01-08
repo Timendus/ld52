@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/images/left.png" type="Texture" id=6]
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/grain.png" type="Texture" id=8]
-[ext_resource path="res://ScorePickup.gd" type="Script" id=9]
+[ext_resource path="res://PositivePickup.gd" type="Script" id=9]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=10]
 [ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=11]
 

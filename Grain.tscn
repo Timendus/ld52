@@ -7,7 +7,6 @@
 flags_transparent = true
 flags_unshaded = true
 params_cull_mode = 2
-params_billboard_mode = 2
 albedo_texture = ExtResource( 2 )
 
 [node name="Grain" instance=ExtResource( 1 )]
