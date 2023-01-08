@@ -14,6 +14,8 @@ params_alpha_scissor_threshold = 0.98
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.5984, 0.466335, 0.212517 )
+
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0.0608108 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
@@ -39,9 +41,11 @@ albedo_texture = ExtResource( 5 )
 material = SubResource( 9 )
 
 [node name="Player" type="RigidBody"]
+mode = 1
 continuous_cd = true
-contacts_reported = 1
+contacts_reported = 8
 contact_monitor = true
+can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 linear_damp = 10.0
@@ -58,7 +62,7 @@ skeleton = NodePath("")
 material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.564, 0, 0, 0, -1.73971e-08, -0.375, 0, 0.398, -1.63918e-08, 0, 0.351932, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.194515, 0 )
 shape = SubResource( 5 )
 
 [node name="LeftParticles" type="Particles" parent="."]
