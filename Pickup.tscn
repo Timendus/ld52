@@ -3,8 +3,8 @@
 [ext_resource path="res://ScorePickup.gd" type="Script" id=1]
 
 [sub_resource type="CylinderShape" id=16]
-height = 1.0
 radius = 0.4
+height = 1.0
 
 [sub_resource type="QuadMesh" id=14]
 
@@ -19,5 +19,6 @@ shape = SubResource( 16 )
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 mesh = SubResource( 14 )
+material/0 = null
 
 [connection signal="pickedup" from="." to="." method="_on_pickedup"]
