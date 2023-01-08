@@ -12,6 +12,10 @@ const MENU = 0
 const TRACK1 = 1
 const TRACK2 = 2
 
+const CHICKEN = 1
+const CRASH = 2
+const PICKUP = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	track1_leader_music.loop = false
@@ -37,6 +41,14 @@ func play_track2():
 		$MusicLeader.stream = track2_leader_music
 		$MusicLoop.stream = track2_music
 		$MusicLeader.play()
+
+func playSFX(fx):
+	if fx == CHICKEN:
+		$Chicken.play()
+	if fx == CRASH:
+		$Crash.play()
+	if fx == PICKUP:
+		$Pickup.play()
 
 # Callback handler when a song finishes playing (not counting looping songs)
 # Used to start the real song after the leader finishes

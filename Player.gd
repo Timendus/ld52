@@ -56,9 +56,11 @@ func _on_Player_body_entered(body):
 
 func _on_Player_score(score):
 	ScoreController.add_to_current_score(score)
+	MusicController.playSFX(MusicController.PICKUP)
 	
 func _on_Player_wrong():
 	ScoreController.add_to_current_score(-10)
+	MusicController.playSFX(MusicController.CHICKEN)
 	
 func _on_Player_finished_level():
 	LevelController.nextLevel()

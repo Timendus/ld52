@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://autoloads/MusicController.gd" type="Script" id=1]
+[ext_resource path="res://assets/soundeffects/pickup.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/soundeffects/chicken.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/soundeffects/crash.mp3" type="AudioStream" id=4]
 
 [node name="MusicController" type="Node"]
 script = ExtResource( 1 )
@@ -12,5 +15,14 @@ volume_db = -3.497
 [node name="MusicLoop" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
 volume_db = -3.497
+
+[node name="Chicken" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Crash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="finished" from="MusicLeader" to="." method="_on_Music_finished"]
