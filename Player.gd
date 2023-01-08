@@ -15,7 +15,9 @@ var previousDirection = null
 func _ready():
 	MusicController.engine_start()
 
-func _process(delta):
+func _physics_process(delta):
+	Engine.time_scale = 0.1 if Input.is_action_pressed("ui_accept") else 1.0
+	
 	var forward = get_parent().transform.basis.x
 	var up = get_parent().transform.basis.y
 	var right = get_parent().transform.basis.z
@@ -49,9 +51,6 @@ func _process(delta):
 		
 	
 	get_node("MeshInstance").get_surface_material(0).albedo_texture = texture
-
-func _process_physics(delta):
-	pass
 
 func _on_Player_body_entered(body):
 	body.emit_signal("pickedup", self)

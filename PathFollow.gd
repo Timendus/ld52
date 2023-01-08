@@ -21,7 +21,7 @@ func _ready():
 	transform = Transform(-forward, Vector3.UP, right, origin)
 
 	
-func _process(delta):
+func _physics_process(delta):
 	speed = min(speed + acceleration * delta, maxSpeed)
 	var oldOffset = offset
 	offset = oldOffset + speed * delta
