@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://PathFollow.gd" type="Script" id=1]
+[ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=4]
 [ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
 
@@ -24,16 +26,27 @@ glow_intensity = 3.69
 glow_bloom = 0.36
 glow_high_quality = true
 
+[sub_resource type="Curve3D" id=13]
+_data = {
+"points": PoolVector3Array(  ),
+"tilts": PoolRealArray(  )
+}
+
 [sub_resource type="SpatialMaterial" id=12]
 flags_transparent = true
 flags_unshaded = true
 albedo_texture = ExtResource( 5 )
 uv1_scale = Vector3( 1, 8, 1 )
 
+[sub_resource type="DynamicFont" id=14]
+size = 75
+font_data = ExtResource( 2 )
+
 [node name="Root" type="WorldEnvironment"]
 environment = SubResource( 10 )
 
 [node name="Path" type="Path" parent="."]
+curve = SubResource( 13 )
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
@@ -61,3 +74,14 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = true
 material = SubResource( 12 )
+
+[node name="UserInterface" type="Node2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 14 )
+text = "Score: 0"
+script = ExtResource( 4 )
