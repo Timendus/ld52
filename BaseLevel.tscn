@@ -36,7 +36,7 @@ environment = SubResource( 10 )
 [node name="Path" type="Path" parent="."]
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 v_offset = 1.0
 script = ExtResource( 1 )
 
