@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://PathFollow.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
+
+[sub_resource type="PanoramaSky" id=9]
+panorama = ExtResource( 7 )
+
+[sub_resource type="Environment" id=10]
+background_mode = 2
+background_sky = SubResource( 9 )
+ambient_light_color = Color( 1, 0.945098, 0.988235, 1 )
+ambient_light_sky_contribution = 0.0
+fog_depth_begin = 0.0
+fog_depth_end = 18.9
+dof_blur_far_distance = 53.97
+dof_blur_far_transition = 3.39
+dof_blur_far_amount = 0.07
+dof_blur_far_quality = 0
+glow_enabled = true
+glow_intensity = 3.69
+glow_bloom = 0.36
+glow_high_quality = true
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1, 8, 1 )
+
+[node name="Root" type="WorldEnvironment"]
+environment = SubResource( 10 )
+
+[node name="Path" type="Path" parent="."]
+
+[node name="PathFollow" type="PathFollow" parent="Path"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+v_offset = 1.0
+script = ExtResource( 1 )
+
+[node name="Player" parent="Path/PathFollow" instance=ExtResource( 3 )]
+
+[node name="Camera" type="Camera" parent="Path/PathFollow"]
+transform = Transform( -1.49012e-07, -2.54659e-11, 1, -3.63798e-12, 1, -6.18456e-11, -1, 5.45697e-11, -1.49012e-07, 1.60001, 1.08846, 0 )
+current = true
+size = 5.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+use_collision = true
+polygon = PoolVector2Array( -5, 0, -5, 0, 5, 0, 5, 0 )
+mode = 2
+path_node = NodePath("../Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource( 12 )

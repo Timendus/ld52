@@ -1,6 +1,7 @@
 extends RigidBody
 
 signal score(score)
+signal died()
 
 export var strafeSpeed = 2
 export var driftFactor = 100
@@ -14,7 +15,7 @@ func _ready():
 
 
 func _process(delta):
-	var currentDirection = get_parent().transform.basis.x
+	var currentDirection = global_transform.basis.x
 	var steering = (1 if Input.is_action_pressed("right") else 0) - (1 if Input.is_action_pressed("left") else 0)
 	var drift = currentDirection.dot(previousDirection.rotated(Vector3.UP, PI/2)) if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor

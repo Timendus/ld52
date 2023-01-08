@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ScorePickup.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/grain.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape" id=13]
+
+[sub_resource type="QuadMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[node name="Grain" type="StaticBody"]
+transform = Transform( 0.965853, -0.000950592, -0.259089, 0.00101229, 0.999999, 0.00010472, 0.259088, -0.000363416, 0.965854, -67.2224, 0.5, -34.657 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
+
+[connection signal="pickedup" from="." to="." method="_on_pickedup"]
