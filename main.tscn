@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://PathFollow.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/straight.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/grain.png" type="Texture" id=8]
 [ext_resource path="res://ScorePickup.gd" type="Script" id=9]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=10]
+[ext_resource path="res://plasmatica.regular.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="PanoramaSky" id=9]
 panorama = ExtResource( 7 )
@@ -60,6 +62,10 @@ height = 0.340516
 flags_transparent = true
 params_cull_mode = 2
 albedo_texture = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 75
+font_data = ExtResource( 11 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -129,6 +135,17 @@ shape = SubResource( 13 )
 [node name="MeshInstance" type="MeshInstance" parent="Grain"]
 mesh = SubResource( 14 )
 material/0 = SubResource( 15 )
+
+[node name="UserInterface" type="Node2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 16 )
+text = "Score: 0"
+script = ExtResource( 10 )
 
 [connection signal="body_entered" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_body_entered"]
 [connection signal="score" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_score"]
