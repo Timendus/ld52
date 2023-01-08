@@ -10,6 +10,11 @@ var playing = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	menu_music.loop = false
+	track1_leader_music.loop = false
+	track1_music.loop = false
+	track2_leader_music.loop = false
+	track2_music.loop = false
 	playMusic()
 
 func play_track1():
