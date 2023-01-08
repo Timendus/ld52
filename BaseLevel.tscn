@@ -43,11 +43,11 @@ albedo_texture = ExtResource( 5 )
 uv1_scale = Vector3( 1, 8, 1 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 75
+size = 55
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=15]
-size = 75
+size = 55
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=16]
@@ -91,7 +91,7 @@ material = SubResource( 12 )
 [node name="UserInterface" type="Node2D" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
-margin_left = 10.0
+margin_left = 18.0
 margin_top = 10.0
 margin_right = 40.0
 margin_bottom = 14.0
@@ -100,9 +100,8 @@ text = "Score: 0"
 script = ExtResource( 4 )
 
 [node name="LapLabel" type="Label" parent="UserInterface"]
-margin_left = 500.0
+margin_left = 810.0
 margin_top = 10.0
-margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 15 )
 text = "Lap: 1/3"
