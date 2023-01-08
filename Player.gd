@@ -1,6 +1,7 @@
 extends RigidBody
 
 signal score(score)
+signal wrong()
 signal died()
 
 export var strafeSpeed = 2
@@ -42,3 +43,6 @@ func _on_Player_body_entered(body):
 
 func _on_Player_score(score):
 	ScoreController.add_to_current_score(score)
+	
+func _on_Player_wrong():
+	ScoreController.add_to_current_score(-10);
