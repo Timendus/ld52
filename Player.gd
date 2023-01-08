@@ -16,15 +16,18 @@ func _ready():
 
 
 func _process(delta):
-	var currentDirection = global_transform.basis.x
+	var forward = get_parent().transform.basis.x
+	var up = get_parent().transform.basis.y
+	var right = get_parent().transform.basis.z
+	
 	var steering = (1 if Input.is_action_pressed("right") else 0) - (1 if Input.is_action_pressed("left") else 0)
-	var drift = currentDirection.dot(previousDirection.rotated(Vector3.UP, PI/2)) if previousDirection != null else 0
+	var drift = right.dot(previousDirection) - up.dot(previousDirection) if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor
 	var x = Vector3.FORWARD.dot(translation)
 	x += delta * slide
 	translation = Vector3.FORWARD * x
 	
-	previousDirection = currentDirection
+	previousDirection = forward
 	
 	var texture = forwardTexture
 	if steering > 0:
