@@ -66,6 +66,10 @@ func play_track2():
 		$MusicLoop.stream = track2_music
 		$MusicLeader.play()
 
+func stop_music():
+	$MusicLeader.stop()
+	$MusicLoop.stop()
+
 func notYetPlaying(song):
 	if playing != song:
 		playing = song
