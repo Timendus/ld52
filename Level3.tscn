@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Corn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Stump.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Grain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Chicken.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve3D" id=1]
 _data = {
-"points": PoolVector3Array( 11.2301, 0, -21.5497, -11.2301, 0, 21.5497, -63.8448, -0.00358265, -43.1412, -13.3758, 0, -26.0286, 13.3758, 0, 26.0286, -66.879, -0.0020752, 37.7776, -45.987, 0, -10.9306, 45.987, 0, 10.9306, -77.7972, 0, 122.346, -19.7201, 0, 2.54453, 19.7201, 0, -2.54453, -4.77254, 0, 76.7962, -10.8452, 0, 20.9675, 10.8452, 0, -20.9675, 121.032, 0, 122.346, -0.0303802, 0, 37.1995, 0.0303802, 0, -37.1995, 67.5291, 0, 46.791, -13.0143, 0, 30.7282, 13.0143, 0, -30.7282, 123.201, 0, -9.96578, 1.01155, -0.0038147, 20.5817, -1.01155, 0.0038147, -20.5817, 52.3457, 0, -41.7785, 19.883, 0, 28.5592, -19.883, 0, -28.5592, 134.047, 0, -89.8591, 27.1969, 0, 14.2377, -27.1969, 0, -14.2377, 24.8603, 0, -99.7344, 24.6229, 0, -66.1292, -24.6229, 0, 66.1292, -63.7387, 0, -43.2513 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector3Array( 11.2301, 0, -21.5497, -11.2301, 0, 21.5497, -63.8448, -0.00358265, -43.1412, -34.8518, -0.0112, -11.8988, 34.8518, 0.0112, 11.8988, -21.5633, 0.0106354, 21.8573, -45.987, 0, -10.9306, 45.987, 0, 10.9306, -77.7972, 0, 122.346, -19.7201, 0, 2.54453, 19.7201, 0, -2.54453, -4.77254, 0, 76.7962, -10.8452, 0, 20.9675, 10.8452, 0, -20.9675, 121.032, 0, 122.346, 13.7171, -0.00338745, 41.3663, -13.7171, 0.00338745, -41.3663, 67.5291, 0, 46.791, -13.0143, 0, 30.7282, 13.0143, 0, -30.7282, 123.201, 0, -9.96578, 1.01155, -0.0038147, 20.5817, -1.01155, 0.0038147, -20.5817, 52.3457, 0, -41.7785, 19.883, 0, 28.5592, -19.883, 0, -28.5592, 134.047, 0, -89.8591, 27.1969, 0, 14.2377, -27.1969, 0, -14.2377, 24.8603, 0, -99.7344, 13.8911, 0.00479126, -5.95332, -13.8911, -0.00479126, 5.95332, -19.0039, -0.017807, -74.5183, 24.6229, 0, -66.1292, -24.6229, 0, 66.1292, -63.7387, 0, -43.2513 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [node name="Root" instance=ExtResource( 1 )]
@@ -15,3 +19,102 @@ curve = SubResource( 1 )
 
 [node name="PathFollow" parent="Path" index="0"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.8448, 0.996417, -43.1412 )
+
+[node name="Lap1Stump" parent="." index="3" groups=["lap1"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -62.3427, 0, 77.9283 )
+
+[node name="Lap1Grain" parent="." index="4" groups=["lap1"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -64.6096, 0, -17.0025 )
+
+[node name="Lap1Grain2" parent="." index="5" groups=["lap1"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -17.2859, 0, -73.1109 )
+
+[node name="Lap1Grain3" parent="." index="6" groups=["lap1"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 66.5933, 0, -100.598 )
+
+[node name="Lap1Corn6" parent="." index="7" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999997, 0, 0, 0, 1, 119.868, 0, -70.2771 )
+
+[node name="Lap1Corn5" parent="." index="8" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 117.034, 0, -25.5038 )
+
+[node name="Lap1Corn" parent="." index="9" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 69.7104, 0, 25.7872 )
+
+[node name="Lap1Corn2" parent="." index="10" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 120.435, 0, 122.702 )
+
+[node name="Lap1Corn3" parent="." index="11" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 14.1688, 0, 81.0454 )
+
+[node name="Lap1Corn4" parent="." index="12" groups=["lap1"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -32.3048, 0, 51.8577 )
+
+[node name="Lap1Chicken" parent="." index="13" groups=["lap1"] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -15.869, 0, 22.3867 )
+
+[node name="Lap1Chicken2" parent="." index="14" groups=["lap1"] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 73.6777, 0, 63.4762 )
+
+[node name="Lap2Grain4" parent="." index="15" groups=["lap2"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -47.6071, 0, -74.2444 )
+
+[node name="Lap2Grain5" parent="." index="16" groups=["lap2"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 11.3351, 0, -103.999 )
+
+[node name="Lap2Grain6" parent="." index="17" groups=["lap2"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 120.151, 0, -100.032 )
+
+[node name="Lap2Corn7" parent="." index="18" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999997, 0, 0, 0, 1, 69.7104, 0, -52.7078 )
+
+[node name="Lap2Corn8" parent="." index="19" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 76.7948, 0, -30.6045 )
+
+[node name="Lap2Corn9" parent="." index="20" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 67.7268, 0, 43.6399 )
+
+[node name="Lap2Corn10" parent="." index="21" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 80.939, 0, 117.167 )
+
+[node name="Lap2Corn11" parent="." index="22" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -46.3934, 0, 118.712 )
+
+[node name="Lap2Corn12" parent="." index="23" groups=["lap2"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -14.21, 0, 25.6387 )
+
+[node name="Lap3Grain7" parent="." index="24" groups=["lap3"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 137.772, 0, -80.5222 )
+
+[node name="Lap3Grain8" parent="." index="25" groups=["lap3"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 47.1554, 0, -92.1819 )
+
+[node name="Lap3Grain9" parent="." index="26" groups=["lap3"] instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 120.151, 0, -100.032 )
+
+[node name="Lap3Corn13" parent="." index="27" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999997, 0, 0, 0, 1, 69.7104, 0, -52.7078 )
+
+[node name="Lap3Corn14" parent="." index="28" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 53.1608, 0, -40.5752 )
+
+[node name="Lap3Corn15" parent="." index="29" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 89.1451, 0, 15.5745 )
+
+[node name="Lap3Corn16" parent="." index="30" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 119.714, 0, 105.719 )
+
+[node name="Lap3Corn17" parent="." index="31" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -16.4816, 0, 90.2775 )
+
+[node name="Lap3Corn18" parent="." index="32" groups=["lap3"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -37.4748, 0, 13.0832 )
+
+[node name="Lap3Stump" parent="." index="33" groups=["lap3"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 114.108, 0, 4.43138 )
+
+[node name="Lap3Chicken" parent="." index="34" groups=["lap3"] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.369293, 0, -91.9511 )
+
+[node name="Lap3Chicken2" parent="." index="35" groups=["lap3"] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 36.9282, 0, 96.0132 )
