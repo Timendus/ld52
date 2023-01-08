@@ -10,6 +10,13 @@ func loadCurrentLevel():
 
 func nextLevel():
 	if levelIndex + 1 >= levels.size():
+		last_level()
 		return
 	levelIndex += 1
 	loadCurrentLevel()
+
+func last_level():
+	if ScoreController.is_highscore():
+		get_tree().change_scene("res://NewHighScore.tscn")
+	else:
+		get_tree().change_scene("res://GameOver.tscn")
