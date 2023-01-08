@@ -1,5 +1,7 @@
 extends RigidBody
 
+signal score(score)
+
 export var strafeSpeed = 2
 export var driftFactor = 100
 export var forwardTexture: Texture
@@ -30,7 +32,12 @@ func _process(delta):
 		
 	
 	get_node("MeshInstance").get_surface_material(0).albedo_texture = texture
-	
 
 func _process_physics(delta):
 	pass
+
+func _on_Player_body_entered(body):
+	body.emit_signal("pickedup", self)
+
+func _on_Player_score(score):
+	print("Scored ", score)

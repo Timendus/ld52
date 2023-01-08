@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody",
+"class": "Pickup",
+"language": "GDScript",
+"path": "res://Pickup.gd"
+} ]
+_global_script_class_icons={
+"Pickup": ""
+}
+
 [application]
 
 config/name="Combine Carnage"

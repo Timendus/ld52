@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://PathFollow.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/straight.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/images/road-texture.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/left.png" type="Texture" id=6]
 [ext_resource path="res://assets/images/sky-box.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/grain.png" type="Texture" id=8]
+[ext_resource path="res://ScorePickup.gd" type="Script" id=9]
 
 [sub_resource type="PanoramaSky" id=9]
 panorama = ExtResource( 7 )
@@ -50,6 +52,15 @@ albedo_texture = ExtResource( 2 )
 radius = 0.179654
 height = 0.340516
 
+[sub_resource type="CapsuleShape" id=13]
+
+[sub_resource type="QuadMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 8 )
+
 [node name="Spatial" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -81,6 +92,9 @@ v_offset = 1.0
 script = ExtResource( 1 )
 
 [node name="Player" type="RigidBody" parent="Track level 1/Path/PathFollow"]
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 linear_damp = 10.0
@@ -104,3 +118,18 @@ shape = SubResource( 5 )
 transform = Transform( -1.49012e-07, -2.54659e-11, 1, -3.63798e-12, 1, -6.18456e-11, -1, 5.45697e-11, -1.49012e-07, 1.60001, 1.08846, 0 )
 current = true
 size = 5.0
+
+[node name="Grain" type="StaticBody" parent="."]
+transform = Transform( 0.965853, -0.000950592, -0.259089, 0.00101229, 0.999999, 0.00010472, 0.259088, -0.000363416, 0.965854, -67.2224, 0.5, -34.657 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Grain"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Grain"]
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
+
+[connection signal="body_entered" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_body_entered"]
+[connection signal="score" from="Track level 1/Path/PathFollow/Player" to="Track level 1/Path/PathFollow/Player" method="_on_Player_score"]
+[connection signal="pickedup" from="Grain" to="Grain" method="_on_pickedup"]
