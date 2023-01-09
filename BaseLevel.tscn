@@ -63,7 +63,6 @@ finishScene = ExtResource( 8 )
 curve = SubResource( 13 )
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
-v_offset = 1.0
 rotation_mode = 4
 script = ExtResource( 1 )
 
@@ -77,7 +76,6 @@ size = 5.0
 far = 500.0
 
 [node name="CSGPolygon" type="CSGPolygon" parent="."]
-use_collision = true
 polygon = PoolVector2Array( -5, 0, -5, 0, 5, 0, 5, 0 )
 mode = 2
 path_node = NodePath("../Path")
