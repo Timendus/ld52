@@ -13,14 +13,6 @@ func _ready():
 		for entry in toHide:
 			entry.hide();
 	
-	var curve: Curve3D = get_parent().curve
-	var origin = curve.interpolate_baked(offset, true)
-	var forward = (curve.interpolate_baked(offset + 0.001, true) - origin).normalized()
-	var up = forward.rotated(Vector3.RIGHT, PI/2)
-	var right = forward.rotated(Vector3.UP, PI/2)
-	transform = Transform(-forward, Vector3.UP, right, origin)
-
-	
 func _physics_process(delta):
 	speed = min(speed + acceleration * delta, maxSpeed)
 	var oldOffset = offset

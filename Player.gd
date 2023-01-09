@@ -28,9 +28,9 @@ func _physics_process(delta):
 	var steering = (1 if Input.is_action_pressed("right") else 0) - (1 if Input.is_action_pressed("left") else 0)
 	var drift = right.dot(previousDirection) + up.dot(previousDirection) * 0.1 if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor
-	var x = Vector3.FORWARD.dot(translation)
+	var x = translation.x
 	
-	x += delta * slide
+	x -= delta * slide
 	
 	if abs(x) > 2.5:
 		# Drifted from road.
@@ -39,7 +39,7 @@ func _physics_process(delta):
 		# Decrease speed significantly
 		get_parent().speed *= 0.5
 
-	translation = Vector3.FORWARD * x
+	translation.x = x
 	
 	previousDirection = forward
 	
