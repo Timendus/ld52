@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.s3tc.stex"
-path.etc2="res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.etc2.stex"
+path="res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/images/road-texture.png"
-dest_files=[ "res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.s3tc.stex", "res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.etc2.stex" ]
+dest_files=[ "res://.import/road-texture.png-d12984090614e2924cc6b01f2d5c6ce9.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
