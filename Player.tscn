@@ -66,6 +66,7 @@ shape = SubResource( 5 )
 
 [node name="LeftParticles" type="Particles" parent="."]
 transform = Transform( 0.0054453, 0, 0.999985, 0, 1, 0, -0.999985, 0, 0.0054453, 0.0340658, 0.0211999, -0.311213 )
+emitting = false
 amount = 16
 lifetime = 0.2
 preprocess = 1.0
