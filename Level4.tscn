@@ -29,7 +29,7 @@ transform = Transform( 1, 0, 0, 0, 0.999993, 0, 0, 0, 1, 96.9701, 3.57813, -27.7
 [node name="Lap3Grain7" parent="." index="5" groups=["lap3"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.99999, 0, 0, 0, 1, -11.9221, 0.506165, 112.786 )
 
-[node name="Lap3Grain" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Lap3Grain" parent="." index="6" groups=["lap3"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999991, 0, 0, 0, 1, -33.8164, 1.13299, -93.9448 )
 
 [node name="Lap1Grain3" parent="." index="7" groups=["lap1"] instance=ExtResource( 4 )]
@@ -38,31 +38,31 @@ transform = Transform( 1, 0, 0, 0, 0.999993, 0, 0, 0, 1, 10.5815, -3.23496, 75.2
 [node name="Lap1Grain2" parent="." index="8" groups=["lap1"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999994, 0, 0, 0, 1, -89.8399, -5.59284, 110.121 )
 
-[node name="Lap2Grain" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Lap2Grain" parent="." index="9" groups=["lap2"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999995, 0, 0, 0, 1, 183.342, 19.2453, -56.6685 )
 
 [node name="Lap1Grain4" parent="." index="10" groups=["lap1"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999997, 0, 0, 0, 1, 71.3174, 0, 38.3292 )
 
-[node name="Lap2Grain4" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Lap2Grain4" parent="." index="11" groups=["lap2"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999997, 0, 0, 0, 1, 102.391, -4.27836, -93.7252 )
 
-[node name="Lap2Grain3" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Lap2Grain3" parent="." index="12" groups=["lap2"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, -64.6933, -1.69291, -25.9312 )
 
-[node name="Lap1Corn5" parent="." index="13" instance=ExtResource( 3 )]
+[node name="Lap1Corn5" parent="." index="13" groups=["lap1"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 192.008, 20.6907, -48.2795 )
 
-[node name="Lap3Corn" parent="." index="14" instance=ExtResource( 3 )]
+[node name="Lap3Corn" parent="." index="14" groups=["lap3"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 98.5818, -9.11486, -48.6813 )
 
-[node name="Lap1Corn" parent="." index="15" instance=ExtResource( 3 )]
+[node name="Lap1Corn" parent="." index="15" groups=["lap1"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 30.4667, 3.61998, -121.28 )
 
-[node name="Lap3Corn2" parent="." index="16" instance=ExtResource( 3 )]
+[node name="Lap3Corn2" parent="." index="16" groups=["lap3"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, -38.5426, 4.12857, 124.337 )
 
-[node name="Lap1Corn2" parent="." index="17" instance=ExtResource( 3 )]
+[node name="Lap1Corn2" parent="." index="17" groups=["lap1"] instance=ExtResource( 3 )]
 transform = Transform( 0.649554, 0, -0.760315, 0, 0.999998, 0, 0.760315, 0, 0.649554, -71.151, -11.4665, 84.691 )
 
 [node name="Lap3Corn9" parent="." index="18" groups=["lap3"] instance=ExtResource( 3 )]
@@ -71,16 +71,16 @@ transform = Transform( 0.779983, 0, -0.625801, 0, 0.999998, 0, 0.625801, 0, 0.77
 [node name="Lap3Corn10" parent="." index="19" groups=["lap3"] instance=ExtResource( 3 )]
 transform = Transform( 0.733089, 0, -0.680133, 0, 0.999998, 0, 0.680133, 0, 0.733089, -45.6479, 0, -75.0567 )
 
-[node name="Lap3Corn3" parent="." index="20" instance=ExtResource( 3 )]
+[node name="Lap3Corn3" parent="." index="20" groups=["lap3"] instance=ExtResource( 3 )]
 transform = Transform( 0.579352, 0, -0.815077, 0, 0.999997, 0, 0.815077, 0, 0.579352, 23.6579, 1.35923, -58.6866 )
 
 [node name="Lap2Corn" parent="." index="21" groups=["lap2"] instance=ExtResource( 3 )]
 transform = Transform( 0.467976, 0, -0.883741, 0, 0.999997, 0, 0.883741, 0, 0.467976, 174.206, 16.9743, -23.8964 )
 
-[node name="Lap1Corn4" parent="." index="22" instance=ExtResource( 3 )]
+[node name="Lap1Corn4" parent="." index="22" groups=["lap1"] instance=ExtResource( 3 )]
 transform = Transform( 0.249231, 0, -0.968444, 0, 0.999998, 0, 0.968444, 0, 0.249231, 120.104, 8.22374, 3.76251 )
 
-[node name="Lap2Corn2" parent="." index="23" instance=ExtResource( 3 )]
+[node name="Lap2Corn2" parent="." index="23" groups=["lap2"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, -68.6922, -8.67074, 3.74329 )
 
 [node name="Lap2Corn8" parent="." index="24" groups=["lap2"] instance=ExtResource( 3 )]
@@ -89,13 +89,13 @@ transform = Transform( 0.477711, 0, 0.878517, 0, 0.999999, 0, -0.878517, 0, 0.47
 [node name="Lap2Chicken" parent="." index="25" groups=["lap2"] instance=ExtResource( 5 )]
 transform = Transform( 0.493699, 0, 0.869633, 0, 0.999999, 0, -0.869633, 0, 0.493699, -75.4017, 0, 120.643 )
 
-[node name="Lap2Chicken2" parent="." index="26" instance=ExtResource( 5 )]
+[node name="Lap2Chicken2" parent="." index="26" groups=["lap2"] instance=ExtResource( 5 )]
 transform = Transform( 0.410305, 0, -0.911948, 0, 0.999998, 0, 0.911948, 0, 0.410305, 84.9241, 2.69124, 23.3004 )
 
 [node name="Lap1Chicken3" parent="." index="27" groups=["lap1"] instance=ExtResource( 5 )]
 transform = Transform( 0.192727, 0, -0.981252, 0, 0.999998, 0, 0.981252, 0, 0.192727, -20.1768, 1.4552, -106.931 )
 
-[node name="Lap1Stump2" parent="." index="28" instance=ExtResource( 2 )]
+[node name="Lap1Stump2" parent="." index="28" groups=["lap1"] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, -71.9068, -6.09933, -6.32139 )
 
 [node name="Lap2Stump3" parent="." index="29" groups=["lap2"] instance=ExtResource( 2 )]
@@ -104,7 +104,7 @@ transform = Transform( 0.185907, 0, -0.982567, 0, 0.999999, 0, 0.982567, 0, 0.18
 [node name="Lap3Stump2" parent="." index="30" groups=["lap3"] instance=ExtResource( 2 )]
 transform = Transform( 0.31977, 0, -0.947495, 0, 0.999999, 0, 0.947495, 0, 0.31977, 49.6735, -1.86116, 70.0654 )
 
-[node name="Lap3Chicken" parent="." index="31" instance=ExtResource( 5 )]
+[node name="Lap3Chicken" parent="." index="31" groups=["lap3"] instance=ExtResource( 5 )]
 transform = Transform( -0.140175, 0, -0.990127, 0, 0.999998, 0, 0.990127, 0, -0.140175, 71.4601, -0.2103, -81.2592 )
 
 [node name="Lap1Chicken" parent="." index="32" groups=["lap1"] instance=ExtResource( 5 )]
