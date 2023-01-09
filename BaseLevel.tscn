@@ -74,6 +74,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00078
 transform = Transform( -1, -3.63797e-12, -2.06632e-07, -3.63798e-12, 1, 2.54659e-11, 2.06632e-07, 2.54659e-11, -1, 0.000781108, 1, -1.3596 )
 current = true
 size = 5.0
+far = 500.0
 
 [node name="CSGPolygon" type="CSGPolygon" parent="."]
 use_collision = true
