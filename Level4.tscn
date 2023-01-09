@@ -18,7 +18,7 @@ _data = {
 curve = SubResource( 1 )
 
 [node name="PathFollow" parent="Path" index="0"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.8448, 0.996417, -43.1412 )
+transform = Transform( 0.993722, -0.00195108, -0.111863, -1.16415e-10, 0.999848, -0.017439, 0.11188, 0.0173295, 0.993571, -63.8467, 0.996265, -43.1239 )
 
 [node name="Lap1Grain" parent="." index="3" groups=["lap1"] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 77.9035, 0, -114.902 )

@@ -17,7 +17,7 @@ _data = {
 curve = SubResource( 1 )
 
 [node name="PathFollow" parent="Path" index="0"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.8448, 0.996417, -43.1412 )
+transform = Transform( 0.888538, 1.91105e-07, -0.458803, 0, 1, 4.16529e-07, 0.458803, -3.70102e-07, 0.888538, -63.8448, 0.996417, -43.1412 )
 
 [node name="Lap1Chicken" parent="." index="3" groups=["lap1"] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -63.7243, 0, 26.6152 )
