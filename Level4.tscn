@@ -101,11 +101,8 @@ transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 1, -71.9068, -6.09933, -6.
 [node name="Lap2Stump3" parent="." index="29" groups=["lap2"] instance=ExtResource( 2 )]
 transform = Transform( 0.185907, 0, -0.982567, 0, 0.999999, 0, 0.982567, 0, 0.185907, 111.86, 5.86291, -32.8453 )
 
-[node name="Lap3Stump2" parent="." index="30" groups=["lap3"] instance=ExtResource( 2 )]
-transform = Transform( 0.31977, 0, -0.947495, 0, 0.999999, 0, 0.947495, 0, 0.31977, 49.6735, -1.86116, 70.0654 )
-
-[node name="Lap3Chicken" parent="." index="31" groups=["lap3"] instance=ExtResource( 5 )]
+[node name="Lap3Chicken" parent="." index="30" groups=["lap3"] instance=ExtResource( 5 )]
 transform = Transform( -0.140175, 0, -0.990127, 0, 0.999998, 0, 0.990127, 0, -0.140175, 71.4601, -0.2103, -81.2592 )
 
-[node name="Lap1Chicken" parent="." index="32" groups=["lap1"] instance=ExtResource( 5 )]
+[node name="Lap1Chicken" parent="." index="31" groups=["lap1"] instance=ExtResource( 5 )]
 transform = Transform( 0.520533, 0, 0.853842, 0, 0.999999, 0, -0.853842, 0, 0.520533, -35.9346, -16.059, 34.9441 )
