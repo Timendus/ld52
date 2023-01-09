@@ -26,7 +26,7 @@ func _physics_process(delta):
 	$RightParticles.emitting = Input.is_action_pressed("right")
 	
 	var steering = (1 if Input.is_action_pressed("right") else 0) - (1 if Input.is_action_pressed("left") else 0)
-	var drift = right.dot(previousDirection) + up.dot(previousDirection) * 0.1 if previousDirection != null else 0
+	var drift = right.dot(previousDirection) * 1.1 if previousDirection != null else 0
 	var slide = strafeSpeed * steering + drift * driftFactor
 	var x = translation.x
 	
